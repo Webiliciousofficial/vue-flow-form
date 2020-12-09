@@ -18,7 +18,7 @@ export default class LanguageModel {
     this.otherPrompt = 'Other'
     this.placeholder = 'Type your answer here...'
     this.submitText = 'Submit'
-    this.longTextHelpText = ':shiftKey + :enterKey to make a line break.'
+    this.longTextHelpText = ''
     this.prev = 'Prev'
     this.next = 'Next'
     this.percentCompleted = ':percent% completed'
