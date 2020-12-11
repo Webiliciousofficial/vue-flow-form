@@ -121,6 +121,31 @@
             required: true,
             placeholder: 'Start typing here...'
           }),
+
+//_######__----------__Basic Info Done__-------------____######__
+          
+          new QuestionModel({
+            id: 'choose_path',
+            tagline: 'Have you published advertisement before? ',
+            title: 'Choose your path:',
+            type: QuestionType.Dropdown,
+            multiple: false,
+            placeholder: 'Select',
+            inline: true,
+            required: true,
+            options: [
+              new ChoiceOption({
+                label: 'YES'
+              }),
+              new ChoiceOption({
+                label: 'NO',
+                value: 'path_b'
+              })
+            ],
+            jump: {
+              path_b: 'pathb'
+            }
+          }),
           new QuestionModel({
             id: 'last_date',
             title: 'When have you published ad last time.',
@@ -128,6 +153,7 @@
             required: true,
             placeholder: 'Start typing here...'
           }),
+          
           new QuestionModel({
             id: 'multiple_choice',
             title: 'What was your satisfaction level in your last ad campaign.',
@@ -182,6 +208,46 @@
                 label: '100,000 and above'
               })
             ]
+          }),
+          new QuestionModel({
+            id: 'new_date',
+            title: 'When are you planning to publish next time.',
+            type: QuestionType.Date,
+            required: true,
+            placeholder: 'Start typing here...',
+            jump: {
+              _other: 'submitit'
+            }
+          }),
+           new QuestionModel({
+            id: 'submitit',
+            title: 'Excellent choice! 🥳',
+            content: 'Press enter or use the continue button for the final submit screen.',
+            type: QuestionType.SectionBreak,
+            jump: {
+              _other: '_submit'
+            }
+          }),
+          new QuestionModel({
+            id: 'pathb',
+            // tagline: '',
+            title: "Hmm, that's sad",
+            helpText: 'Are you intrested in publishing advertisment 😉',
+            type: QuestionType.MultipleChoice,
+            multiple: false,
+            required: true,
+            options: [
+              new ChoiceOption({
+                label: 'Yes I am',
+                value: 'path_a'
+              }),
+              new ChoiceOption({
+                label: 'No not intersted'
+              })
+            ],
+            jump: {
+              path_a: 'new_date'
+            }
           })
         ]
       }

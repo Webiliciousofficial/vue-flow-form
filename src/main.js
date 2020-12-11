@@ -38,5 +38,5 @@ export {
   ChoiceOption,
   LinkOption,
   LanguageModel,
-  MaskPresets
+  MaskPresets,
 }
